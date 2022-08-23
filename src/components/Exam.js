@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Exam.css";
 import Webcam from "react-webcam";
 import data from "./test.json";
+import jsondatafunction from '../Redux/Actions/Action.js'
+import {useDispatch,useSelector} from 'react-redux'
 export default function Exam() {
+  var select=useSelector((state)=>state.fetchdata)
+  console.log(select,"this is new state")
+  // var dispatch=useDispatch()
   const [num, setnum] = useState(1);
   const [count, setcount] = useState(0);
   const [selected ,setselected]=useState("");
-  console.log(count);
-  console.log(selected)
+  // useEffect(()=>{
+  //     dispatch(jsondatafunction(data));
+  // },[dispatch])
   return (
     <div className="fill_window" >
       <div className="left_list">
